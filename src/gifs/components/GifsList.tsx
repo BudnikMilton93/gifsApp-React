@@ -1,11 +1,11 @@
-import React from 'react';
-import type { Gif } from '../../mock-data/gifs.mocks';
+import React, { type FC } from 'react';
+import type { Gif } from '../interfaces/gif.interface';
 
 interface Props {
     gifs: Gif[];
 }
 
-export const GifsList = ({ gifs }: Props) => {
+export const GifsList: FC<Props> = ({ gifs }) => {
     return (
         <div className='gifs-container'>
             {
