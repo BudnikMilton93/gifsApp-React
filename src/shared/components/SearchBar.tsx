@@ -14,6 +14,7 @@ export const SearchBar = ({ placeHolder = 'Buscar', onQuery }: Props) => {
     // Estado local donde guardamos lo que escribe el usuario
     const [query, setQuery] = useState('');
 
+    //Uso del UseEffect
     useEffect(() => {
         // Cada vez que "query" cambia, programamos un temporizador (debounce)
         // La función onQuery(query) se ejecutará recién después de 700 ms

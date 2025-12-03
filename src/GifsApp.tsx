@@ -8,6 +8,7 @@ import { getGifsByQuery } from './gifs/actions/get-gifs-by-query.action';
 
 export const GifsApp = () => {
 
+    // Uso de UseState
     // El useState tiene: una constante (primer valor) es lo que se muestra en pantalla, 
     // la función para actualizar esta variable (segundo valor)
     // y por último el estado inicial  (tercer valor)
