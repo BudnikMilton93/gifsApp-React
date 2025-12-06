@@ -15,11 +15,11 @@ Cuenta con una caché interna optimizada y un input con debounce para evitar lla
   7. Netlify (deploy)
 
 # 📌 Características principales
-✔️ Búsqueda dinámica de GIFs con debounce (700ms)
-✔️ Historial de las últimas 8 búsquedas
-✔️ Caché interna usando useRef para evitar peticiones repetidas
-✔️ Completamente tipado
-✔️ Interfaz sencilla, modular y fácil de extender
+- Búsqueda dinámica de GIFs con debounce (700ms)
+- Historial de las últimas 8 búsquedas
+- Caché interna usando useRef para evitar peticiones repetidas
+- Completamente tipado
+- Interfaz sencilla, modular y fácil de extender
 
 # 🧩 Custom Hook: useGifs
 Encapsula toda la lógica de la aplicación:
@@ -30,3 +30,14 @@ Encapsula toda la lógica de la aplicación:
 - Manejo de resultados
 
 # 🧠 Debounce en SearchBar
+<pre>
+  useEffect(() => {
+  const timeoutId = setTimeout(() => onQuery(query), 700);
+  return () => clearTimeout(timeoutId);
+}, [query]);
+</pre>
+
+# 🌐 Deploy
+El proyecto está disponible en Netlify:
+
+➡️ https://gifsappsearcher.netlify.app/
