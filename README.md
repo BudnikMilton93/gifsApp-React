@@ -4,6 +4,8 @@ React + TypeScript + Vite
 Aplicación hecha en React + TypeScript que permite buscar GIFs en tiempo real, guardar búsquedas recientes y visualizar resultados de forma dinámica.
 Cuenta con una caché interna optimizada y un input con debounce para evitar llamadas innecesarias.
 
+📚 Este proyecto fue desarrollado gracias al curso de Fernando Herrera:
+https://www.udemy.com/course/react-cero-experto/
 
 # 🚀 Tecnologías utilizadas
   1. React 18
