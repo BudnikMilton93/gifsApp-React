@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# 🟦 GIFs App – Buscador de GIFs 
+React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación hecha en React + TypeScript que permite buscar GIFs en tiempo real, guardar búsquedas recientes y visualizar resultados de forma dinámica.
+Cuenta con una caché interna optimizada y un input con debounce para evitar llamadas innecesarias.
 
-Currently, two official plugins are available:
+📚 Este proyecto fue desarrollado gracias al curso de Fernando Herrera:
+https://www.udemy.com/course/react-cero-experto/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🚀 Tecnologías utilizadas
+  1. React 18
+  2. TypeScript
+  3. Custom Hooks (useGifs)
+  4. useState / useEffect / useRef
+  5. Fetch API
+  6. CSS simple
+  7. Netlify (deploy)
 
-## React Compiler
+# 📌 Características principales
+- Búsqueda dinámica de GIFs con debounce (700ms)
+- Historial de las últimas 8 búsquedas
+- Caché interna usando useRef para evitar peticiones repetidas
+- Completamente tipado
+- Interfaz sencilla, modular y fácil de extender
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+# 🧩 Custom Hook: useGifs
+Encapsula toda la lógica de la aplicación:
+- Peticiones a la API
+- Manejo de términos previos
+- Selección rápida desde el historial
+- Cacheo en memoria usando useRef
+- Manejo de resultados
 
-## Expanding the ESLint configuration
+# 🧠 Debounce en SearchBar
+<pre>
+  useEffect(() => {
+  const timeoutId = setTimeout(() => onQuery(query), 700);
+  return () => clearTimeout(timeoutId);
+}, [query]);
+</pre>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 🌐 Deploy
+El proyecto está disponible en Netlify:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+➡️ https://gifsappsearcher.netlify.app/
