@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import { type FC } from 'react';
 import type { Gif } from '../interfaces/gif.interface';
 
 interface Props {

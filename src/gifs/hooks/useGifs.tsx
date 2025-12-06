@@ -47,9 +47,10 @@ export const useGifs = () => {
         //Properties
         previousTerms,
         searchResultGif,
+        
+        //Methods
         handleSearch,
         handleTermClicked
-
     }
 }
 
