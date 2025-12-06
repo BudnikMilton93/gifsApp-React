@@ -8,5 +8,6 @@ createRoot(document.getElementById('root')!).render(
     <GifsApp>
 
     </GifsApp>
+
   </StrictMode>,
 )
