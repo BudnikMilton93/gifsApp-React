@@ -17,7 +17,10 @@ export const useCounter = (initialValue: number = 10) => {
 
     return {
         //Values
-        counter, handdleAdd, handdleSubstract, handdleReset
+        counter, 
+        
+        //Methods
+        handdleAdd, handdleSubstract, handdleReset
 
     }
 }
