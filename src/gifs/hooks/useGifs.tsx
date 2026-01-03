@@ -14,8 +14,8 @@ export const useGifs = () => {
 
     //useRef: Nos crea un espacio en memoria
     //No causa renders y mantiene el estado a lo largo del ciclo de vida
-    const gifCache = useRef<Record <string, Gif[]> > ({});
-    
+    const gifCache = useRef<Record<string, Gif[]>>({});
+
     const handleTermClicked = async (term: string) => {
         if (gifCache.current[term]) {
             setSearchResultGifs(gifCache.current[term]);
@@ -24,6 +24,8 @@ export const useGifs = () => {
 
         const gifs = await getGifsByQuery(term);
         setSearchResultGifs(gifs);
+        gifCache.current[term] = gifs;
+
     }
 
     const handleSearch = async (query: string = '') => {
@@ -47,7 +49,7 @@ export const useGifs = () => {
         //Properties
         previousTerms,
         searchResultGif,
-        
+
         //Methods
         handleSearch,
         handleTermClicked
